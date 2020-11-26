@@ -1,0 +1,38 @@
+<p>movies-list works!</p>
+
+<h1>Movies</h1>
+<a routerLink="new" class="btn btn-sm btn-success mb-2">Add Movie</a>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th style="width: 30%">Movie Title</th>
+            <th style="width: 30%">Movie Description</th>
+            <th style="width: 30%">Date Released</th>
+            <th style="width: 10%"></th>
+        </tr>
+        
+    </thead>
+    <tbody>
+        <tr *ngFor="let movie of movies">
+            <td>{{movie.title}}</td>
+            <td>{{movie.description}}</td>
+            <td>{{movie.dateReleased}}</td>
+            <td style="white-space: nowrap">
+                <a routerLink="edit/{{movie.id}}" class="btn btn-sm btn-primary mr-1">Edit</a>
+                <button (click)="deleteMovie(movie.id)" class="btn btn-sm btn-danger btn-delete-movie" [disabled]="movie.isDeleting">
+                    <span *ngIf="movie.isDeleting" class="spinner-border spinner-border-sm"></span>
+                    <span *ngIf="!movie.isDeleting">Delete</span>
+                </button>
+                <button (click)="addToFavorites(movie)" class="btn btn-sm btn-danger btn-delete-movie" [disabled]="movie.isLiked">
+                    <span *ngIf="movie.isLiked" class="spinner-border spinner-border-sm"></span>
+                    <span *ngIf="!movie.isLiked">Like</span>
+                </button>
+            </td>
+        </tr>
+        <tr *ngIf="!movies">
+            <td colspan="4" class="text-center">
+                <span class="spinner-border spinner-border-lg align-center"></span>
+            </td>
+        </tr>
+    </tbody>
+</table>

@@ -7,7 +7,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { JwtInterceptor, ErrorInterceptor } from './_helpers';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home';
-
+import { MoviesModule } from './movies/movies.module';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 
 @NgModule({
@@ -16,17 +16,17 @@ import { NavBarComponent } from './nav-bar/nav-bar.component';
         ReactiveFormsModule,
         HttpClientModule,
         AppRoutingModule,
+        MoviesModule,
         FormsModule
     ],
     declarations: [
         AppComponent,
-        HomeComponent,
-        NavBarComponent
-    ],
+        HomeComponent
+,
+        NavBarComponent    ],
     providers: [
         { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
         { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
-
     ],
     bootstrap: [AppComponent]
 })
