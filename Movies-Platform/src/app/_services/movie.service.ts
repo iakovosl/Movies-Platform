@@ -26,10 +26,7 @@ export class MovieService {
       return this.http.post<Movie>(`${environment.apiUrl}/movies`, movie);
     }
   
-    updateMovie(
-      movie: Movie,
-      id: string
-    ): Observable<Movie> {
+    updateMovie(movie: Movie,id: string): Observable<Movie> {
       return this.http.put<Movie>(`${environment.apiUrl}/movies/${id}`, movie);
     }
   
@@ -42,25 +39,12 @@ export class MovieService {
     }
 
   favoriteMovie(id: string) {
-    return this.http.post<favoriteMovieCorrelation>(
-      `${environment.apiUrl}/users/favorites`,
-      {
-        movieId: id,
-      }
-    );
-  }
+    return this.http.post<favoriteMovieCorrelation>(`${environment.apiUrl}/users/favorites`,{movieId: id,});
+   }
 
   deleteFavoriteMovie(id: string) {
-    return this.http
-      .delete<favoriteMovieCorrelation>(
-        `${environment.apiUrl}/users/favorites/${id}`
-      )
-      .pipe(
-        map((res) => {
-          return res;
-        })
-      );
-  }
+    return this.http.delete<favoriteMovieCorrelation>(`${environment.apiUrl}/users/favorites/${id}`)
+      .pipe(map((res) => {return res;}));
+   }
 
-  
-  }
+ }
