@@ -1,7 +1,8 @@
 <p>favorite-movies works!</p>
 
-<h1>Favorite Movies</h1>
-<a routerLink="favorite" class="btn btn-sm btn-success mb-2"></a>
+<p class="p-3 mb-2 bg-primary text-white text-center" >Favorite Movies</p>
+
+<a routerLink="favorite" class=""></a>
 <table class="table table-striped">
     <thead>
         <tr>
@@ -18,10 +19,10 @@
             <td>{{favoriteMovie.description}}</td>
             <td>{{favoriteMovie.dateReleased}}</td>
             <td style="white-space: nowrap">
-                <a routerLink="../{{ favoriteMovie.id }}" class="btn btn-sm btn-primary mr-1">Edit</a>
-                <button (click)="deleteFavoriteMovie(favoriteMovie.favoriteId)" class="btn btn-sm btn-danger btn-delete-movie" [disabled]="favoriteMovie.isDeleting">
+                <a routerLink="../{{ favoriteMovie.id }}" class="btn btn-sm btn-primary glyphicon glyphicon-pencil"></a>
+                <button (click)="deleteFavoriteMovie(favoriteMovie.favoriteId)" class="btn btn-sm btn-danger glyphicon glyphicon-thumbs-down" [disabled]="favoriteMovie.isDeleting">
                     <span *ngIf="favoriteMovie.isDeleting" class="spinner-border spinner-border-sm"></span>
-                    <span *ngIf="!favoriteMovie.isDeleting">Delete</span>
+                    <span *ngIf="!favoriteMovie.isDeleting"></span>
                 </button>
             </td>
         </tr>

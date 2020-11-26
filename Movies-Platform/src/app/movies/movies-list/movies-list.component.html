@@ -18,15 +18,16 @@
             <td>{{movie.description}}</td>
             <td>{{movie.dateReleased}}</td>
             <td style="white-space: nowrap">
-                <a routerLink="edit/{{movie.id}}" class="btn btn-sm btn-primary mr-1">Edit</a>
-                <button (click)="deleteMovie(movie.id)" class="btn btn-sm btn-danger btn-delete-movie" [disabled]="movie.isDeleting">
-                    <span *ngIf="movie.isDeleting" class="spinner-border spinner-border-sm"></span>
-                    <span *ngIf="!movie.isDeleting">Delete</span>
-                </button>
-                <button (click)="addToFavorites(movie)" class="btn btn-sm btn-danger btn-delete-movie" [disabled]="movie.isLiked">
+                <button (click)="addToFavorites(movie)" class="btn btn-sm label-info glyphicon glyphicon-thumbs-up" [disabled]="movie.isLiked">
                     <span *ngIf="movie.isLiked" class="spinner-border spinner-border-sm"></span>
-                    <span *ngIf="!movie.isLiked">Like</span>
+                    <span *ngIf="!movie.isLiked"></span>
                 </button>
+                <a routerLink="edit/{{movie.id}}" class="btn btn-sm btn-primary glyphicon glyphicon-pencil"></a>
+                <button (click)="deleteMovie(movie.id)" class="btn btn-sm btn-danger glyphicon glyphicon-trash" [disabled]="movie.isDeleting">
+                    <span *ngIf="movie.isDeleting" class="spinner-border spinner-border-sm"></span>
+                    <span *ngIf="!movie.isDeleting"></span>
+                </button>
+             
             </td>
         </tr>
         <tr *ngIf="!movies">

@@ -1,11 +1,11 @@
 <!-- nav -->
 <nav class="navbar navbar-expand navbar-dark bg-dark" *ngIf="user">
     <div class="navbar-nav">
-        <a class="nav-item nav-link" routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Home</a>
+        <a class="glyphicon glyphicon-home nav-link" routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"></a>
         <a class="nav-item nav-link" routerLink="/movies" routerLinkActive="active">All Movies</a>
         <a class="nav-item nav-link" routerLink="/movies/favorite" routerLinkActive="active">Favorite Movies</a>
         <a class="nav-item nav-link" routerLink="/profile" href="#">Profile</a>
         <a class="nav-item nav-link" (click)="logout()">Logout</a>
-        <span class="nav-item nav-link">Signed in as <strong> {{ user.firstname }}</strong></span>
+        <span class="glyphicon glyphicon-user nav-link"><strong> {{ user.firstname }}</strong></span>
     </div>
 </nav>
