@@ -8,6 +8,7 @@ import { JwtInterceptor, ErrorInterceptor } from './_helpers';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home';
 import { MoviesModule } from './movies/movies.module';
+import { ProfileModule } from './profile/profile.module';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 
 @NgModule({
@@ -17,7 +18,8 @@ import { NavBarComponent } from './nav-bar/nav-bar.component';
         HttpClientModule,
         AppRoutingModule,
         MoviesModule,
-        FormsModule
+        FormsModule,
+        ProfileModule
     ],
     declarations: [
         AppComponent,

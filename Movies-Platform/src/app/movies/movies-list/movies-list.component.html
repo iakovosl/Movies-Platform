@@ -18,7 +18,7 @@
             <td>{{movie.description}}</td>
             <td>{{movie.dateReleased}}</td>
             <td style="white-space: nowrap">
-                <button (click)="addToFavorites(movie)" class="btn btn-sm label-info glyphicon glyphicon-thumbs-up" [disabled]="movie.isLiked">
+                <button (click)="addToFavorites(movie)" class="btn btn-primary label-info glyphicon glyphicon-thumbs-up" [disabled]="movie.isLiked">
                     <span *ngIf="movie.isLiked" class="spinner-border spinner-border-sm"></span>
                     <span *ngIf="!movie.isLiked"></span>
                 </button>
