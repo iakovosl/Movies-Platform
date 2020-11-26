@@ -1,1 +1,19 @@
 <p>details works!</p>
+
+<div *ngIf="error" class="container alert alert-danger mt-3 mb-0">
+    {{ error }}
+  </div>
+  <div class="card">
+    <div *ngIf="currentUser">
+      <div class="header"></div>
+      <div class="card-body">
+        <h1>{{ currentUser.firstname }} {{ currentUser.lastname }}</h1>
+        <p class="username">@{{ currentUser.username }}</p>
+  
+        <button routerLink="edit/" class="btn btn-sm btn-primary glyphicon glyphicon-pencil"></button>&nbsp;
+        <button class="btn btn-sm btn-danger glyphicon glyphicon-trash"></button>
+      </div>
+      <br />
+    </div>
+  </div>
+

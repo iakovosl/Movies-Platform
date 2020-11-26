@@ -18,11 +18,11 @@
             <td>{{movie.description}}</td>
             <td>{{movie.dateReleased}}</td>
             <td style="white-space: nowrap">
-                <button (click)="addToFavorites(movie)" class="btn btn-primary label-info glyphicon glyphicon-thumbs-up" [disabled]="movie.isLiked">
+                <button (click)="addToFavorites(movie)" class="btn btn-sm btn-primary label-info glyphicon glyphicon-thumbs-up" [disabled]="movie.isLiked">
                     <span *ngIf="movie.isLiked" class="spinner-border spinner-border-sm"></span>
                     <span *ngIf="!movie.isLiked"></span>
                 </button>
-                <a routerLink="edit/{{movie.id}}" class="btn btn-sm btn-primary glyphicon glyphicon-pencil"></a>
+                &nbsp; <a routerLink="edit/{{movie.id}}" class="btn btn-sm btn-primary glyphicon glyphicon-pencil"></a>&nbsp;
                 <button (click)="deleteMovie(movie.id)" class="btn btn-sm btn-danger glyphicon glyphicon-trash" [disabled]="movie.isDeleting">
                     <span *ngIf="movie.isDeleting" class="spinner-border spinner-border-sm"></span>
                     <span *ngIf="!movie.isDeleting"></span>

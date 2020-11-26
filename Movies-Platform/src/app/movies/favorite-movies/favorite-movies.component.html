@@ -19,7 +19,7 @@
             <td>{{favoriteMovie.description}}</td>
             <td>{{favoriteMovie.dateReleased}}</td>
             <td style="white-space: nowrap">
-                <a routerLink="../{{ favoriteMovie.id }}" class="btn btn-sm btn-primary glyphicon glyphicon-pencil"></a>
+                <a routerLink="../{{ favoriteMovie.id }}" class="btn btn-sm btn-primary glyphicon glyphicon-pencil"></a>&nbsp;
                 <button (click)="deleteFavoriteMovie(favoriteMovie.favoriteId)" class="btn btn-sm btn-danger glyphicon glyphicon-thumbs-down" [disabled]="favoriteMovie.isDeleting">
                     <span *ngIf="favoriteMovie.isDeleting" class="spinner-border spinner-border-sm"></span>
                     <span *ngIf="!favoriteMovie.isDeleting"></span>
