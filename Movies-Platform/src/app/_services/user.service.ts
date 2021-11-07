@@ -1,18 +1,11 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { map, tap, delay } from 'rxjs/operators';
-
 import { environment } from '../../environments/environment';
 import { User } from '../_models/user';
-
-
-import { BehaviorSubject, Observable } from 'rxjs';
-import { Router } from '@angular/router';
+import { Observable } from 'rxjs';
 import { AccountService } from '../_services/account.service';
 import { Movie } from '../_models/movie';
-
-
-
 import { favoriteMovieCorrelation } from '../_models';
 
 
@@ -23,6 +16,10 @@ export class UserService {
 
   getUser(): Observable<User> {
     return this.http.get<User>(`${environment.apiUrl}/users/details`);
+  }
+
+  updateUser(valueschanged) {
+    return this.http.put<User>(`${environment.apiUrl}/users/`, valueschanged).pipe(map((user) => {return user;}));
   }
 
   deleteUser(): Observable<User> {
@@ -48,8 +45,5 @@ export class UserService {
   deleteFavoriteMovie(id: string): Observable<favoriteMovieCorrelation> {
     return this.http.delete<favoriteMovieCorrelation>(`${environment.apiUrl}/users/favorites/${id}`);
   }
-
-
-  
 
 }

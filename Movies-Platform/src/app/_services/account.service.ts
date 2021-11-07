@@ -3,7 +3,6 @@ import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
-
 import { environment } from '@environments/environment';
 import { User } from '@app/_models';
 
@@ -57,7 +56,6 @@ export class AccountService {
     }
 
     register(firstname: string,lastname: string,username: string,password: string) {
-        return this.http.post<any>(`${environment.apiUrl}/users`, {firstname,lastname,username,password,});
+        return this.http.post<any>(`${environment.apiUrl}/users`, {firstname,lastname,username,password});
       }
-
 }
